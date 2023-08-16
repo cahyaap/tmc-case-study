@@ -18,7 +18,7 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $size = (int) ($request->input("size") ?? 10);
-        $skus = $request->input("sku") ?? [];
+        $tempSkus = $request->input("sku") ?? [];
         $names = $request->input("name") ?? [];
         $priceStart = $request->input("price_start") ?? null;
         $priceEnd = $request->input("price_end") ?? null;
@@ -27,9 +27,14 @@ class ProductController extends Controller
         $categoryNames = $request->input("category_name") ?? [];
         $tempCategoryIds = $request->input("category_id") ?? [];
 
+        $skus = [];
+        foreach($tempSkus as $sku){
+            if ($sku) array_push($skus, $sku);
+        }
+
         $categoryIds = [];
         foreach($tempCategoryIds as $categoryId){
-            if ($categoryId) array_push($categoryIds);
+            if ($categoryId) array_push($categoryIds, $categoryId);
         }
 
         $data = Product::with(['category:id,name'])
