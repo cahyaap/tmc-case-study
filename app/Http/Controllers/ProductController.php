@@ -24,8 +24,13 @@ class ProductController extends Controller
         $priceEnd = $request->input("price_end") ?? null;
         $stockStart = $request->input("stock_start") ?? null;
         $stockEnd = $request->input("stock_end") ?? null;
-        $categoryIds = $request->input("category_id") ?? [];
         $categoryNames = $request->input("category_name") ?? [];
+        $tempCategoryIds = $request->input("category_id") ?? [];
+
+        $categoryIds = [];
+        foreach($tempCategoryIds as $categoryId){
+            if ($categoryId) array_push($categoryIds);
+        }
 
         $data = Product::with(['category:id,name'])
             ->when(count($skus) > 0, function($query) use($skus){
