@@ -10,6 +10,7 @@ class ProductController extends Controller
 {
     /**
      * Search products data with or without conditions.
+     * The conditions and response are following TMC Case Study v2 pdf file
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -67,6 +68,7 @@ class ProductController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * The conditions and response are following TMC Case Study v2 pdf file
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response

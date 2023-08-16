@@ -10,6 +10,7 @@ class CategoryController extends Controller
 {
     /**
      * Store a newly created resource in storage.
+     * The conditions and response are following TMC Case Study v2 pdf file
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
