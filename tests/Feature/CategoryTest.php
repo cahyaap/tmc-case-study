@@ -34,7 +34,7 @@ class CategoryTest extends TestCase
         $this->json('POST', 'api/categories', $payload)
             ->assertStatus(401)
             ->assertJson([
-                'Message' => 'Authentication Required!'
+                'message' => 'Authentication required!'
             ]);
     }
 

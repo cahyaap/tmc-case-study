@@ -27,7 +27,7 @@ class SearchTest extends TestCase
         $this->json('GET', 'api/search')
             ->assertStatus(401)
             ->assertJson([
-                'Message' => 'Authentication Required!'
+                'message' => 'Authentication required!'
             ]);
     }
 

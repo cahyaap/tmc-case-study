@@ -44,7 +44,7 @@ class ProductTest extends TestCase
         $this->json('POST', 'api/products', $payload)
             ->assertStatus(401)
             ->assertJson([
-                'Message' => 'Authentication Required!'
+                'message' => 'Authentication required!'
             ]);
     }
 

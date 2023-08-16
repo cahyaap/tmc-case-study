@@ -18,7 +18,7 @@ class ApiKey
     {
         $token = $request->header('Authorization');
         if($token !== env('API_KEY', 'TMCCASESTUDYCAHYA')){
-            return response()->json(["Message" => "Authentication Required!"], 401);
+            return response()->json(["message" => "Authentication required!"], 401);
         }
         return $next($request);
     }
